@@ -34,7 +34,7 @@ React.render(
             )
         )
     ),
-    document.getElementById('example')
+    document.getElementById('auth_form')
 );
 
 
