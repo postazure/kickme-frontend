@@ -1,11 +1,16 @@
 import React from 'react'
-import { Link } from 'react-router'
+import {Router} from 'react-router'
 
 
 export default class SignIn extends React.Component {
+    signInUser(e) {
+        e.preventDefault();
+        console.log( "User Signed In - sort of" );
+    }
+
     render() {
         return (
-            <div className="ui form">
+            <form className="ui form" onSubmit={this.signInUser.bind(this)}>
                 <h1>Sign In</h1>
                 <div className="field">
                     <label>Username</label>
@@ -22,11 +27,10 @@ export default class SignIn extends React.Component {
                         <i className="lock icon"></i>
                     </div>
                 </div>
-                <Link to="/watchlist">
-                    <div className="ui blue submit button">Sign In</div>
-                </Link>
-            </div>
+
+                <input type='submit' value="Sign In" className="ui blue submit button"/>
+
+            </form>
         )
     }
 }
-
