@@ -1,8 +1,8 @@
 import { Router, Route, Link } from 'react-router'
 import React from 'react'
 import Main from './src/views/main.js'
-import AuthForm from './src/views/auth_form.js'
-import WatchList from './src/views/watch_list.js'
+import AuthForm from './src/views/auth/auth_form.js'
+import WatchList from './src/views/watch_list/index.js'
 
 import createBrowserHistory from 'history/lib/createBrowserHistory'
 

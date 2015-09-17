@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default class AddNewCreators extends React.Component {
+export default class Add extends React.Component {
     render() {
         return (
             <div className="ui input">

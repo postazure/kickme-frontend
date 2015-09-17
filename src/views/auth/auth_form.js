@@ -1,6 +1,6 @@
 import React from 'react'
-import SignIn from './auth/sign_in.js'
-import SignUp from './auth/sign_up.js'
+import SignIn from './sign_in.js'
+import SignUp from './sign_up.js'
 import { Link } from 'react-router'
 
 

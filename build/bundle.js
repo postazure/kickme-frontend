@@ -13,13 +13,13 @@ var _srcViewsMainJs = require('./src/views/main.js');
 
 var _srcViewsMainJs2 = _interopRequireDefault(_srcViewsMainJs);
 
-var _srcViewsAuth_formJs = require('./src/views/auth_form.js');
+var _srcViewsAuthAuth_formJs = require('./src/views/auth/auth_form.js');
 
-var _srcViewsAuth_formJs2 = _interopRequireDefault(_srcViewsAuth_formJs);
+var _srcViewsAuthAuth_formJs2 = _interopRequireDefault(_srcViewsAuthAuth_formJs);
 
-var _srcViewsWatch_listJs = require('./src/views/watch_list.js');
+var _srcViewsWatch_listIndexJs = require('./src/views/watch_list/index.js');
 
-var _srcViewsWatch_listJs2 = _interopRequireDefault(_srcViewsWatch_listJs);
+var _srcViewsWatch_listIndexJs2 = _interopRequireDefault(_srcViewsWatch_listIndexJs);
 
 var _historyLibCreateBrowserHistory = require('history/lib/createBrowserHistory');
 
@@ -31,12 +31,12 @@ _react2['default'].render(_react2['default'].createElement(
     _react2['default'].createElement(
         _reactRouter.Route,
         { path: '/', component: _srcViewsMainJs2['default'] },
-        _react2['default'].createElement(_reactRouter.Route, { path: 'auth', component: _srcViewsAuth_formJs2['default'] }),
-        _react2['default'].createElement(_reactRouter.Route, { path: 'watchlist', component: _srcViewsWatch_listJs2['default'] })
+        _react2['default'].createElement(_reactRouter.Route, { path: 'auth', component: _srcViewsAuthAuth_formJs2['default'] }),
+        _react2['default'].createElement(_reactRouter.Route, { path: 'watchlist', component: _srcViewsWatch_listIndexJs2['default'] })
     )
 ), document.getElementById('main'));
 
-},{"./src/views/auth_form.js":215,"./src/views/main.js":216,"./src/views/watch_list.js":217,"history/lib/createBrowserHistory":7,"react":212,"react-router":33}],2:[function(require,module,exports){
+},{"./src/views/auth/auth_form.js":213,"./src/views/main.js":216,"./src/views/watch_list/index.js":218,"history/lib/createBrowserHistory":7,"react":212,"react-router":33}],2:[function(require,module,exports){
 /**
  * Indicates that navigation was caused by a call to history.push.
  */
@@ -23595,6 +23595,81 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _sign_inJs = require('./sign_in.js');
+
+var _sign_inJs2 = _interopRequireDefault(_sign_inJs);
+
+var _sign_upJs = require('./sign_up.js');
+
+var _sign_upJs2 = _interopRequireDefault(_sign_upJs);
+
+var _reactRouter = require('react-router');
+
+var AuthForm = (function (_React$Component) {
+    _inherits(AuthForm, _React$Component);
+
+    function AuthForm() {
+        _classCallCheck(this, AuthForm);
+
+        _get(Object.getPrototypeOf(AuthForm.prototype), 'constructor', this).apply(this, arguments);
+    }
+
+    _createClass(AuthForm, [{
+        key: 'render',
+        value: function render() {
+            return _react2['default'].createElement(
+                'div',
+                { className: ' ui raised very padded text container segment' },
+                _react2['default'].createElement(
+                    'div',
+                    { className: 'ui two column middle aligned very relaxed stackable grid' },
+                    _react2['default'].createElement(
+                        'div',
+                        { className: 'column' },
+                        _react2['default'].createElement(_sign_inJs2['default'], null)
+                    ),
+                    _react2['default'].createElement(
+                        'div',
+                        { className: 'ui vertical divider' },
+                        'Or'
+                    ),
+                    _react2['default'].createElement(
+                        'div',
+                        { className: 'column' },
+                        _react2['default'].createElement(_sign_upJs2['default'], null)
+                    )
+                )
+            );
+        }
+    }]);
+
+    return AuthForm;
+})(_react2['default'].Component);
+
+exports['default'] = AuthForm;
+module.exports = exports['default'];
+
+},{"./sign_in.js":214,"./sign_up.js":215,"react":212,"react-router":33}],214:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, '__esModule', {
+    value: true
+});
+
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
 var _reactRouter = require('react-router');
 
 var SignIn = (function (_React$Component) {
@@ -23666,7 +23741,7 @@ var SignIn = (function (_React$Component) {
 exports['default'] = SignIn;
 module.exports = exports['default'];
 
-},{"react":212,"react-router":33}],214:[function(require,module,exports){
+},{"react":212,"react-router":33}],215:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -23773,82 +23848,7 @@ var SignUp = (function (_React$Component) {
 exports['default'] = SignUp;
 module.exports = exports['default'];
 
-},{"react":212,"react-router":33}],215:[function(require,module,exports){
-'use strict';
-
-Object.defineProperty(exports, '__esModule', {
-    value: true
-});
-
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
-var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var _authSign_inJs = require('./auth/sign_in.js');
-
-var _authSign_inJs2 = _interopRequireDefault(_authSign_inJs);
-
-var _authSign_upJs = require('./auth/sign_up.js');
-
-var _authSign_upJs2 = _interopRequireDefault(_authSign_upJs);
-
-var _reactRouter = require('react-router');
-
-var AuthForm = (function (_React$Component) {
-    _inherits(AuthForm, _React$Component);
-
-    function AuthForm() {
-        _classCallCheck(this, AuthForm);
-
-        _get(Object.getPrototypeOf(AuthForm.prototype), 'constructor', this).apply(this, arguments);
-    }
-
-    _createClass(AuthForm, [{
-        key: 'render',
-        value: function render() {
-            return _react2['default'].createElement(
-                'div',
-                { className: ' ui raised very padded text container segment' },
-                _react2['default'].createElement(
-                    'div',
-                    { className: 'ui two column middle aligned very relaxed stackable grid' },
-                    _react2['default'].createElement(
-                        'div',
-                        { className: 'column' },
-                        _react2['default'].createElement(_authSign_inJs2['default'], null)
-                    ),
-                    _react2['default'].createElement(
-                        'div',
-                        { className: 'ui vertical divider' },
-                        'Or'
-                    ),
-                    _react2['default'].createElement(
-                        'div',
-                        { className: 'column' },
-                        _react2['default'].createElement(_authSign_upJs2['default'], null)
-                    )
-                )
-            );
-        }
-    }]);
-
-    return AuthForm;
-})(_react2['default'].Component);
-
-exports['default'] = AuthForm;
-module.exports = exports['default'];
-
-},{"./auth/sign_in.js":213,"./auth/sign_up.js":214,"react":212,"react-router":33}],216:[function(require,module,exports){
+},{"react":212,"react-router":33}],216:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -23942,6 +23942,53 @@ exports['default'] = Main;
 module.exports = exports['default'];
 
 },{"react":212,"react-router":33}],217:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var Add = (function (_React$Component) {
+    _inherits(Add, _React$Component);
+
+    function Add() {
+        _classCallCheck(this, Add);
+
+        _get(Object.getPrototypeOf(Add.prototype), "constructor", this).apply(this, arguments);
+    }
+
+    _createClass(Add, [{
+        key: "render",
+        value: function render() {
+            return _react2["default"].createElement(
+                "div",
+                { className: "ui input" },
+                _react2["default"].createElement("input", { type: "text", placeholder: "Search for Project Creator" })
+            );
+        }
+    }]);
+
+    return Add;
+})(_react2["default"].Component);
+
+exports["default"] = Add;
+module.exports = exports["default"];
+
+},{"react":212}],218:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
@@ -23962,9 +24009,9 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _watch_listAddNewCreatorsJs = require('./watch_list/addNewCreators.js');
+var _addJs = require('./add.js');
 
-var _watch_listAddNewCreatorsJs2 = _interopRequireDefault(_watch_listAddNewCreatorsJs);
+var _addJs2 = _interopRequireDefault(_addJs);
 
 var WatchList = (function (_React$Component) {
     _inherits(WatchList, _React$Component);
@@ -24017,7 +24064,7 @@ var WatchList = (function (_React$Component) {
             return _react2['default'].createElement(
                 'div',
                 { className: 'ui raised very padded container segment' },
-                _react2['default'].createElement(_watch_listAddNewCreatorsJs2['default'], null),
+                _react2['default'].createElement(_addJs2['default'], null),
                 _react2['default'].createElement(
                     'h3',
                     { className: 'ui header' },
@@ -24034,54 +24081,7 @@ var WatchList = (function (_React$Component) {
 exports['default'] = WatchList;
 module.exports = exports['default'];
 
-},{"./watch_list/addNewCreators.js":218,"react":212}],218:[function(require,module,exports){
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
-var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var _react = require('react');
-
-var _react2 = _interopRequireDefault(_react);
-
-var AddNewCreators = (function (_React$Component) {
-    _inherits(AddNewCreators, _React$Component);
-
-    function AddNewCreators() {
-        _classCallCheck(this, AddNewCreators);
-
-        _get(Object.getPrototypeOf(AddNewCreators.prototype), "constructor", this).apply(this, arguments);
-    }
-
-    _createClass(AddNewCreators, [{
-        key: "render",
-        value: function render() {
-            return _react2["default"].createElement(
-                "div",
-                { className: "ui input" },
-                _react2["default"].createElement("input", { type: "text", placeholder: "Search for Project Creator" })
-            );
-        }
-    }]);
-
-    return AddNewCreators;
-})(_react2["default"].Component);
-
-exports["default"] = AddNewCreators;
-module.exports = exports["default"];
-
-},{"react":212}],219:[function(require,module,exports){
+},{"./add.js":217,"react":212}],219:[function(require,module,exports){
 // shim for using process in browser
 
 var process = module.exports = {};

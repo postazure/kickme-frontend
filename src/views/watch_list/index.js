@@ -1,5 +1,5 @@
 import React from 'react'
-import AddNewCreators from './watch_list/addNewCreators.js'
+import AddNewCreators from './add.js'
 
 export default class WatchList extends React.Component {
     getProjectCreators() {
