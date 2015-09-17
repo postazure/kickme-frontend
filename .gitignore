@@ -2,3 +2,4 @@
 node_modules/
 build/.module-cache/*
 .divshot-cache
+divshot-debug.log
