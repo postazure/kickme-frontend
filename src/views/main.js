@@ -7,14 +7,16 @@ export default class Main extends React.Component {
         <div className="content">
             <div className="ui menu">
                 <span>
-                    <h1 className="ui header">Kick Me!
-                        <small className="ui sub header">New Project Notifications for Kickstater</small>
-                    </h1>
+                    <Link to="/">
+                        <h1 className="ui header">Kick Me!
+                            <small className="ui sub header">New Project Notifications for Kickstater</small>
+                        </h1>
+                    </Link>
                 </span>
 
                 <div className="right menu">
                     <span className="item">
-                        <Link to="/auth">Auth</Link>
+                        <Link to="/auth">Sign in | Sign up</Link>
                     </span>
                 </div>
             </div>
